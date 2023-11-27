@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Museu">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Acompanhante" type="_acompanhante" maxOccurs="unbounded"></xs:element>
+				<xs:element name="anexo" type="_anexo" maxOccurs="unbounded"></xs:element>
+				<xs:element name="Chamante" type="_chamante" maxOccurs="unbounded"></xs:element>
+				<xs:element name="Contratante" type="_contratante" maxOccurs="unbounded"></xs:element>
+				<xs:element name="DeslAnterior" type="_deslAnterior" maxOccurs="unbounded"></xs:element>
+				<xs:element name="Filiacao" type="_filiacao" maxOccurs="unbounded"></xs:element>
+				<xs:element name="IdentificacaoEmigrante" type="_identificacaoEmigrante" maxOccurs="unbounded"></xs:element>
+				<xs:element name="Intermediario" type="_intermediario" maxOccurs="unbounded"></xs:element>
+				<xs:element name="Localidade" type="_localidade" maxOccurs="unbounded"></xs:element>
+				<xs:element name="Lugar" type="_lugar" maxOccurs="unbounded"></xs:element>
+				<xs:element name="Nota" type="_nota" maxOccurs="unbounded"></xs:element>
+				<xs:element name="PessoasFamFicamPais" type="_pessoasFamFicamPais" maxOccurs="unbounded"></xs:element>
+				<xs:element name="Processo" type="_processo" maxOccurs="unbounded"></xs:element>
+				<xs:element name="ProcessoAcomp" type="_processoAcomp" maxOccurs="unbounded"></xs:element>
+				<xs:element name="ProcessoAnexo" type="_processoAnexo" maxOccurs="unbounded"></xs:element>
+				<xs:element name="ProcessoPessoasFam" type="_processoPessoasFam" maxOccurs="unbounded"></xs:element>				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="_acompanhante">
+		<xs:sequence>
+			<xs:element name="idAcomp" type="xs:integer"></xs:element>
+			<xs:element name="nome" type="xs:string"></xs:element>
+			<xs:element name="idAcompAux" type="xs:string"></xs:element>
+			<xs:element name="dtNasc" type="_dtNasc"></xs:element>
+			<xs:element name="parentesco" type="xs:string"></xs:element>
+			<xs:element name="habilitacoes"/>				
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="_anexo">
+		<xs:sequence>
+			<xs:element name="idAnexo" type="xs:integer"></xs:element>
+			<xs:element name="descricao" type="xs:string"></xs:element>			
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="_chamante">
+		<xs:sequence>
+			<xs:element name="idChamante" type="xs:integer"></xs:element>
+			<xs:element name="nome" type="xs:string"></xs:element>
+			<xs:element name="residencia" type="xs:string"></xs:element>
+			<xs:element name="tempoEstrang" type="xs:string"></xs:element>
+			<xs:element name="passap"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="_contratante">
+		<xs:sequence>
+			<xs:element name="idContratante" type="xs:integer"></xs:element>
+			<xs:element name="nome" type="xs:string"></xs:element>
+			<xs:element name="residencia" type="xs:string"></xs:element>
+			<xs:element name="conhecimento" type="xs:string"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="_deslAnterior">
+		<xs:sequence>
+			<xs:element name="idDeslAnterior" type="xs:integer"></xs:element>
+			<xs:element name="viajaPrimVez" type="xs:string"></xs:element>
+			<xs:element name="dtRegresso"/>
+			<xs:element name="passapAnt" type="xs:string"></xs:element>
+			<xs:element name="entEmissora"/>
+			<xs:element name="repatriado"/>
+			<xs:element name="motivo"/>
+			<xs:element name="pedidoAnt" type="xs:string"></xs:element>
+			<xs:element name="numCM" type="xs:integer"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="_filiacao">
+		<xs:sequence>
+			<xs:element name="idFiliacao" type="xs:integer"></xs:element>
+			<xs:element name="idPai" type="xs:string"></xs:element>
+			<xs:element name="idMae" type="xs:string"></xs:element>
+			<xs:element name="nomePai" type="xs:string"></xs:element>
+			<xs:element name="nomeMae" type="xs:string"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="_identificacaoEmigrante">
+		<xs:sequence>
+			<xs:element name="idEmigrante" type="xs:integer"></xs:element>
+			<xs:element name="nome" type="xs:string"></xs:element>
+			<xs:element name="dtNasc" type="_dtNasc"></xs:element>
+			<xs:element name="idConj" type="xs:string"></xs:element>
+			<xs:element name="nomeConj" type="xs:string"></xs:element>
+			<xs:element name="idFiliacao" type="xs:string"></xs:element>
+			<xs:element name="idNaturalidade" type="xs:integer"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="_intermediario">
+		<xs:sequence>
+			<xs:element name="idIntermediario" type="xs:integer"></xs:element>
+			<xs:element name="nome" type="xs:string"></xs:element>
+			<xs:element name="residencia" type="xs:string"></xs:element>
+			<xs:element name="atividade" type="xs:string"></xs:element>
+			<xs:element name="nomePai" type="xs:string"></xs:element>
+			<xs:element name="nomeMae" type="xs:string"></xs:element>
+			<xs:element name="parentesco" type="xs:string"></xs:element>
+			<xs:element name="passap" type="xs:string"></xs:element>
+			<xs:element name="pagamento" type="xs:string"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="_localidade">
+		<xs:sequence>
+			<xs:element name="idLocalidade" type="xs:integer"></xs:element>
+			<xs:element name="freguesia" type="xs:string"></xs:element>
+			<xs:element name="concelho" type="xs:string"></xs:element>
+			<xs:element name="distrito" type="xs:string"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="_lugar">
+		<xs:sequence>
+			<xs:element name="idLugar" type="xs:integer"></xs:element>
+			<xs:element name="lugar" type="xs:string"></xs:element>
+			<xs:element name="idLocalidade" type="xs:string"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="_nota">
+		<xs:sequence>
+			<xs:element name="idNota" type="xs:integer"></xs:element>
+			<xs:element name="descricao" type="xs:string"></xs:element>
+			<xs:element name="numCM" type="xs:string"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="_pessoasFamFicamPais">
+		<xs:sequence>
+			<xs:element name="idPessoasFamFicamPais" type="xs:integer"></xs:element>
+			<xs:element name="nome" type="xs:string"></xs:element>
+			<xs:element name="idDependente" type="xs:string"></xs:element>
+			<xs:element name="idade" type="xs:string"></xs:element>
+			<xs:element name="parentesco" type="xs:string"></xs:element>
+			<xs:element name="aCargoEmigrante" type="xs:string"></xs:element>
+			<xs:element name="idResidencia" type="xs:integer"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="_processo">
+		<xs:sequence>
+			<xs:element name="numCM" type="xs:integer"></xs:element>
+			<xs:element name="numCMu" type="xs:string"></xs:element>
+			<xs:element name="numJE" type="xs:string"></xs:element>
+			<xs:element name="ano" type="xs:string"></xs:element>
+			<xs:element name="idade" type="xs:string"></xs:element>
+			<xs:element name="estCivil" type="xs:string"></xs:element>
+			<xs:element name="paisDestino" type="xs:string"></xs:element>
+			<xs:element name="localidadeDestino" type="xs:string"></xs:element>
+			<xs:element name="dtExp" type="xs:string"></xs:element>
+			<xs:element name="oficioExp" type="xs:string"></xs:element>
+			<xs:element name="passapExp" type="xs:string"></xs:element>
+			<xs:element name="tipoTranspEmb" type="xs:string"></xs:element>
+			<xs:element name="desigTranspEmb" type="xs:string"></xs:element>
+			<xs:element name="ciaEmb" type="xs:string"></xs:element>
+			<xs:element name="dtEmb" type="xs:string"></xs:element>
+			<xs:element name="passPagaEmb" type="xs:string"></xs:element>
+			<xs:element name="localEmb" type="xs:string"></xs:element>
+			<xs:element name="portoDesemb" type="xs:string"></xs:element>
+			<xs:element name="irComEmb" type="xs:string"></xs:element>
+			<xs:element name="profissaoHab" type="xs:string"></xs:element>
+			<xs:element name="habLiterariasHab" type="xs:string"></xs:element>
+			<xs:element name="localTrabHab" type="xs:string"></xs:element>
+			<xs:element name="remCondEco" type="xs:string"></xs:element>
+			<xs:element name="numDiasTrabCondEco" type="xs:string"></xs:element>
+			<xs:element name="motivoEmigCondEco" type="xs:string"></xs:element>
+			<xs:element name="despDeslCondEco" type="xs:string"></xs:element>
+			<xs:element name="julgadoAntPen" type="xs:string"></xs:element>
+			<xs:element name="procPendAntPen" type="xs:string"></xs:element>
+			<xs:element name="procPendFamAntPen" type="xs:string"></xs:element>
+			<xs:element name="nomeAuxPaisDestino" type="xs:string"></xs:element>
+			<xs:element name="parentescoAuxPaisDestino" type="xs:string"></xs:element>
+			<xs:element name="residenciaAuxPaisDestino" type="xs:string"></xs:element>
+			<xs:element name="profissaoAuxPaisDestino" type="xs:string"></xs:element>
+			<xs:element name="auxPrestadosAuxPaisDestino" type="xs:string"></xs:element>
+			<xs:element name="obtenContratoTrab" type="xs:string"></xs:element>
+			<xs:element name="profissaoContratoTrab" type="xs:string"></xs:element>
+			<xs:element name="salarioContratoTrab" type="xs:string"></xs:element>
+			<xs:element name="jaTrabalhouMulherMenor" type="xs:string"></xs:element>
+			<xs:element name="familiaresMulherMenor" type="xs:string"></xs:element>
+			<xs:element name="qtTempoMulherMenor" type="xs:string"></xs:element>
+			<xs:element name="ocupacaoMulherMenor" type="xs:string"></xs:element>
+			<xs:element name="temConhecimentoDeclMulher" type="xs:string"></xs:element>
+			<xs:element name="consideraDeclMulher" type="xs:string"></xs:element>
+			<xs:element name="parentescoComChamante" type="xs:string"></xs:element>
+			<xs:element name="idEmigrante" type="xs:string"></xs:element>
+			<xs:element name="idChamante" type="xs:string"></xs:element>
+			<xs:element name="idResidencia" type="xs:string"></xs:element>
+			<xs:element name="idLugar" type="xs:string"></xs:element>
+			<xs:element name="idIntermediario" type="xs:string"></xs:element>
+			<xs:element name="idContratante" type="xs:string"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="_processoAcomp">
+		<xs:sequence>
+			<xs:element name="numCM" type="xs:integer"></xs:element>
+			<xs:element name="idAcomp" type="xs:string"></xs:element>
+			<xs:element name="idProcessoAcomp" type="xs:integer"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="_processoAnexo">
+		<xs:sequence>
+			<xs:element name="idAnexo" type="xs:integer"></xs:element>
+			<xs:element name="numCM" type="xs:integer"></xs:element>
+			<xs:element name="idProcessoAnexo" type="xs:integer"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="_processoPessoasFam">
+		<xs:sequence>
+			<xs:element name="idPessoasFamFicamPais" type="xs:integer"></xs:element>
+			<xs:element name="numCM" type="xs:integer"></xs:element>
+			<xs:element name="idProcessoPessoasFam" type="xs:integer"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="_dtNasc" >
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d{4}-\d{2}-\d{2}|\s{0}"></xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

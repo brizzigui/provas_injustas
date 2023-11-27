@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<campeonato>
+    <clubes>
+        <primeira-divisao id='0'></primeira-divisao>
+        <primeira-divisao id='1'></primeira-divisao>
+        <segunda-divisao id='2'></segunda-divisao>
+        <segunda-divisao id='3'></segunda-divisao>
+    </clubes>
+    <clubes>
+        <primeira-divisao id='4'></primeira-divisao>
+        <primeira-divisao id='5'></primeira-divisao>
+        <segunda-divisao id='6'></segunda-divisao>
+        <segunda-divisao id='7'></segunda-divisao>
+    </clubes>
+    <jogadores>
+        <nome clube='grêmio'></nome>
+        <posicao></posicao>
+    </jogadores>
+    <jogadores>
+        <nome clube='internacional'></nome>
+        <posicao></posicao>
+    </jogadores>
+    <arbitros>
+        <arbitro>
+            <fifa></fifa>
+        </arbitro>
+        <auxiliar></auxiliar>
+    </arbitros>
+    <jogos>
+        <primeiro-turno clube-casa='grêmio' clube-visitante='internacional'></primeiro-turno>
+        <primeiro-turno clube-casa='internacional' clube-visitante='grêmio'></primeiro-turno>
+        <segundo-turno clube-casa='grêmio' clube-visitante='internacional'></segundo-turno>
+        <segundo-turno clube-casa='internacional' clube-visitante='grêmio'></segundo-turno>
+    </jogos>
+</campeonato>

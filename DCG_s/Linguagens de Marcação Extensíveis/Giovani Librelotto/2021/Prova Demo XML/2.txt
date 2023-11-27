@@ -1,0 +1,18 @@
+2)
+a) 
+for $p in //slide 
+where //slide/descendant::lista[@tipo="normal"] 
+return $p 
+b) 
+for $p in //figura 
+where $p/@uri 
+return $p
+c) 
+<tag>
+{for $p in //slide 
+where count($p/descendant::figura)=1 and count($p/descendant::tabela)=0 
+return <onlyfig>{$p}</onlyfig>}
+{for $o in //slide 
+where count($o/descendant::figura)=0 and count($o/descendant::tabela)=1 
+return <onlytable>{$o}</onlytable>}
+</tag>

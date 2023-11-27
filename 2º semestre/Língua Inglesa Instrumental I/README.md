@@ -1,0 +1,1 @@
+# Vai estudar inglês... Não tem muito o que fazer, porque tu vai percisar pro resto do curso.

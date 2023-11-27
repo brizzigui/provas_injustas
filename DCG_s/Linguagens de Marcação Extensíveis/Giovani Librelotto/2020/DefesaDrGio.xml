@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<apresentacao>
+	<abertura>
+		<titulo>Topic Maps:</titulo>
+		<subtitulo>da sintaxe à semântica</subtitulo>
+		<autores>
+			<autor>
+				<nome>Giovani Rubert Librelotto</nome>
+				<email>grl@di.uminho.pt</email>
+			</autor>
+		</autores>
+		<instituicao>Universidade do Minho</instituicao>
+		<localidade>Braga - Portugal</localidade>
+		<data>Agosto de 2005</data>
+		<palavras-chave>
+			<palavra-chave>Tese Topic Maps</palavra-chave>
+			<palavra-chave>Topic Maps</palavra-chave>
+			<palavra-chave>XML</palavra-chave>
+			<palavra-chave>ISO 13250</palavra-chave>
+			<palavra-chave>Metarmophosis</palavra-chave>
+			<palavra-chave>XTche</palavra-chave>
+			<palavra-chave>Ulisses</palavra-chave>
+			<palavra-chave>Giovani Librelotto</palavra-chave>
+			<palavra-chave>Processamento Semântico</palavra-chave>
+			<palavra-chave>Ontologias</palavra-chave>
+			<palavra-chave>Universidade do Minho</palavra-chave>
+		</palavras-chave>
+		<resumo>
+			Sendo necessário um mecanismo de validação para garantir a preservação da semântica de cada topic map, o que aqui se defende é um sistema (uma linguagem e seu processador) para a especificação de restrições em TM com base num conjunto de regras.
+		</resumo>
+	</abertura>
+	<corpo>
+		<slide titulo="Contexto da Tese" codigo="S001">
+			<cabecalho><titulo>Topic Maps</titulo></cabecalho>
+			<corpo>
+				<lista tipo="normal">
+					<item>
+						<texto>Processamento de documentos estruturados;</texto>
+					</item>
+					<item>
+						<texto>Processamento semântico de documentos;</texto>
+					</item>
+					<item>
+						<texto>XML</texto>
+					</item>
+					<item>
+						<texto>Ontologias</texto>
+					</item>
+					<item>
+						<texto>ISO 13250 Topic Maps</texto>
+					</item>
+				</lista>
+			</corpo>
+			<rodape><data>Agosto 2003</data></rodape>
+		</slide>
+		<slide titulo="Topic Maps: características" codigo="S002">
+			<corpo>
+				<lista tipo="normal">
+					<item>
+						<texto>Permitem estabelecer uma rede associativa e estruturada entre os tópicos, permitindo navegação sobre a mesma;</texto>
+					</item>
+					<item>
+						<texto>Organizam hierarquicamente os recursos num novo domínio de informação/conhecimento, relacionando-os com os tópicos;</texto>
+					</item>
+					<item>
+						<texto>Propiciam a interoperabilidade entre recursos de informação distintos, através de uma visão conceptual integrada da ontologia sobre o domínio.</texto>
+					</item>
+				</lista>
+			</corpo>
+		</slide>
+		<slide titulo="Motivação: o problema" codigo="S003">
+			<corpo>
+				<tabela borda="0">
+					<linha>
+						<celula>
+							<lista tipo="normal">
+								<item>
+									<texto>Vantagem de TM: </texto> <bloco-realce tipo="negrito"><texto>liberdade em sua criação</texto></bloco-realce>
+									<lista tipo="normal">
+											<item>
+												<texto>Essa liberdade pode por em risco a sua consistência;</texto>
+											</item>
+										</lista>
+								</item>
+								<item>
+									<texto>Validação semântica manual é possível</texto>
+										<lista tipo="normal">
+											<item>
+												<texto>Contudo, para TM de tamanho considerável, é inviável.</texto>
+											</item>
+										</lista>
+								</item>
+							</lista>
+						</celula>
+						<celula>
+							<lista tipo="normal">
+								<item>
+									<texto>A norma TM não possui mecanismos para restrições semânticas em mapas de tópicos</texto>
+										<lista tipo="normal">
+											<item>
+												<texto>Restrições estruturais são definidas pelo DTD de XTM;</texto>
+											</item>
+											<item>
+												<texto>ISO 19756 TMCL está em fase de discussão;</texto>
+											</item>
+										</lista>
+								</item>
+							</lista>
+						</celula>
+					</linha>
+				</tabela>
+			</corpo>
+		</slide>
+		<slide titulo="A Tese" codigo="S004">
+			<corpo><texto>Sendo necessário um mecanismo de validação para garantir a preservação da semântica de cada topic map, 
+	o que aqui se defende é um sistema (uma linguagem e seu processador) para a especificação de restrições em TM com base num conjunto de regras.</texto></corpo>
+		</slide>
+		<slide titulo="Topic Maps - TAO" codigo="S005">
+			<corpo>
+				<lista tipo="normal">
+					<item>
+						<bloco-realce tipo="negrito"><texto>T</texto></bloco-realce> <texto> refere-se ao tópico:</texto>
+						<lista tipo="normal">
+								<item>
+									<texto>representa um tema dentro do universo de discurso:</texto>
+									<lista tipo="normal">
+											<item>
+												<texto>Ex: Universidade do Minho, comboio, Portugal, artigo, …</texto>
+											</item>
+										</lista>
+								</item>
+							</lista>
+					</item>
+					<item>
+						<bloco-realce tipo="negrito"><texto>A</texto></bloco-realce><texto> refere-se à associação: </texto>
+						<lista tipo="normal">
+								<item>
+									<texto>é um relacionamento entre um ou mais tópicos, onde cada tópico desempenha um papel de actuação:</texto>
+									<lista tipo="normal">
+											<item>
+												<texto>Ex: escrever, importar, fazer, empregar, …</texto>
+											</item>
+										</lista>
+								</item>
+							</lista>
+					</item>
+					<item>
+						<bloco-realce tipo="negrito"><texto>O</texto></bloco-realce> <texto> refere-se à ocorrência:  </texto>
+						<lista tipo="normal">
+								<item>
+									<texto>ligação aos recursos de informação relevante para um dado tópico:</texto>
+									<lista tipo="normal">
+											<item>
+												<texto>Ex: http://www.uminho.pt, mailto:librelotto@gmail.com, …</texto>
+											</item>
+										</lista>
+								</item>
+							</lista>
+					</item>
+				</lista>
+			</corpo>
+		</slide>
+		<slide titulo="Ontologia expressa em Topic Maps" codigo="S006">
+			<corpo>
+				<imagem>
+					<figura uri="imagens/ontologiaexpressaemtopicmaps.gif"/>
+					<legenda>Ilustração ontologia expressa em topic maps</legenda>
+				</imagem>
+			</corpo>
+		</slide>
+		<slide titulo="Linguagens de Representação de TM" codigo="S007">
+			<corpo>
+				<bloco-realce tipo="negrito">
+					<bloco-realce tipo="sublinhado"><texto>Gerais:</texto></bloco-realce>
+				</bloco-realce>
+				<br/>
+				<lista tipo="normal">
+					<item>
+						<texto>AsTMa=</texto>
+							<lista tipo="normal">
+								<item>
+									<texto>sintaxe baseada na linguagem AsTMa;</texto>
+								</item>
+							</lista>
+					</item>
+					<item>
+						<texto>LTM</texto>
+							<lista tipo="normal">
+								<item>
+									<texto>representa os construtores de TM como texto em um formato simplificado e compacto.</texto>
+								</item>
+							</lista>
+					</item>
+				</lista>
+				<bloco-realce tipo="negrito">
+					<bloco-realce tipo="sublinhado"><texto>Baseadas em XML:</texto></bloco-realce>
+				</bloco-realce>
+				<br/>
+				<lista tipo="normal">
+					<item>
+						<texto>HyTM</texto>
+							<lista tipo="normal">
+								<item>
+									<texto>dialecto SGML baseado em HyTime;</texto>
+								</item>
+							</lista>
+					</item>
+					<item>
+						<texto>XTM</texto>
+							<lista tipo="normal">
+								<item>
+									<texto>documento XML onde diferentes elementos são usados para representar tópicos, ocorrências, associações, etc;</texto>
+								</item>
+							</lista>
+					</item>
+				</lista>
+			</corpo>
+		</slide>
+		<slide titulo="Metamorphosis: objectivo" codigo="S008">
+			<corpo>
+				<imagem>
+					<figura uri="imagens/metamosphosis_objetivo.gif"/>
+					<legenda>Ilustração do Objetivo de Metamorphosis</legenda>
+				</imagem>
+			</corpo>
+		</slide>
+		<slide titulo="Metamorphosis: Arquitectura" codigo="S009">
+			<corpo>
+				<imagem>
+					<figura uri="imagens/metamosphosis_arquitetura.gif"/>
+					<legenda>Ilustração da Arquitetura de Metamorphosis</legenda>
+				</imagem>
+			</corpo>
+		</slide>
+		<slide titulo="Oveia" codigo="S010">
+			<corpo>
+				<imagem>
+					<figura uri="imagens/oveia.gif"/>
+					<legenda>Ilustração do funcionamento de Oveia</legenda>
+				</imagem>
+			</corpo>
+		</slide>
+		<slide titulo="XTche" codigo="S011">
+			<corpo>
+				<imagem>
+					<figura uri="imagens/xtche.gif"/>
+					<legenda>Ilustração do uso de XTche</legenda>
+				</imagem>
+			</corpo>
+		</slide>
+		<slide titulo="Ulisses" codigo="S012">
+			<corpo>
+				<imagem>
+					<figura uri="imagens/ulisses.gif"/>
+					<legenda>Ilustração do uso de Ulisses</legenda>
+				</imagem>
+			</corpo>
+		</slide>
+		<slide titulo="Restrições em XTche: objectivos" codigo="S013">
+			<corpo>
+				<lista tipo="normal">
+					<item>
+						<texto>Verificar se a estrutura de um TM está de acordo com um conjunto de regras semânticas;</texto>
+					</item>
+					<item>
+						<texto>Gerar relatórios sobre um TM concreto;</texto>
+					</item>
+					<item>
+						<texto>Permitir a especificação de esquemas para TM de uma mesma família:</texto>
+						<lista tipo="normal">
+								<item>
+									<texto>Esquemas: regras a serem obedecidas pelos TM de uma família;</texto>
+								</item>
+							</lista>
+					</item>
+				</lista>
+			</corpo>
+		</slide>
+		<slide titulo="Implementação desejada de XTche" codigo="S014">
+			<corpo>
+				<lista tipo="normal">
+					<item>
+						<texto>Seguir a norma ISO 19756: TMCL</texto>
+					</item>
+					<item>
+						<texto>Tornar a validação simples;</texto>
+					</item>
+					<item>
+						<texto>Fazer isso utilizando uma tecnologia existente;</texto>
+					</item>
+					<item>
+						<texto>Tornar user-friendly</texto>
+						<lista tipo="normal">
+								<item>
+									<texto>Se possível, não obrigar o utilizador a ter que aprender uma nova linguagem.</texto>
+								</item>
+							</lista>
+					</item>
+				</lista>
+			</corpo>
+		</slide>
+		<slide titulo="Linguagem XTche" codigo="S015">
+			<corpo>
+				<lista tipo="normal">
+					<item>
+						<texto>Linguagem de esquema  linguagem de restrições;</texto>
+					</item>
+					<item>
+						<texto>Linguagem baseada em XML Schema</texto>
+							<lista tipo="normal">
+								<item>
+									<texto>Ferramentas para XML Schema possuem interessantes interfaces gráficas;</texto>
+								</item>
+								<item>
+									<texto>Ao escolher XML Schema para representar XTche, parte do trabalho já está realizado.</texto>
+								</item>
+							</lista>
+					</item>
+					<item>
+						<texto>XTche = XML Schema + marcas semânticas</texto>
+					</item>
+				</lista>
+			</corpo>
+		</slide>
+		<slide titulo="Esqueleto XTche" codigo="S016">
+			<corpo>
+				<imagem>
+					<figura uri="imagens/esqueleto_xtche.gif"/>
+					<legenda>Schema WSDL</legenda>
+				</imagem>
+				<lista tipo="normal">
+					<item>
+						<texto>Namespace: </texto>
+						<lista tipo="normal">
+								<item>
+									<texto>http://www.di.uminho.pt/~gepl/xtche/</texto>
+								</item>
+							</lista>
+					</item>
+					<item>
+						<texto>Imports:</texto>
+						<lista tipo="normal">
+								<item>
+									<texto>http://www.di.uminho.pt/~gepl/xtche/xtche-schema.xsd</texto>
+								</item>
+							</lista>
+					</item>
+				</lista>
+			</corpo>
+		</slide>
+		<slide titulo="Conclusão" codigo="S017">
+			<corpo>
+				<lista tipo="normal">
+					<item>
+						<texto>Objectivos principais atingidos: </texto>
+							<lista tipo="normal">
+								<item>
+									<texto>Uma linguagem para a especificação de restrições em TM que:</texto>
+										<lista tipo="normal">
+											<item>
+												<texto>Supre uma carência da norma ISO 13250 TM;</texto>
+											</item>
+											<item>
+												<texto>Cobre os requisitos da norma ISO 19756 TMCL; </texto>
+											</item>
+										</lista>
+								</item>
+							</lista>
+							<lista tipo="normal">
+								<item>
+									<texto>Um ambiente integrado para extracção, criação, armazenamento, validação e navegação de TM que:</texto>
+										<lista tipo="normal">
+											<item>
+												<texto>Segue a norma ISO 13250 TM;</texto>
+											</item>
+											<item>
+												<texto>Utiliza especificações XML;</texto>
+											</item>
+										</lista>
+								</item>
+							</lista>
+					</item>
+				</lista>
+			</corpo>
+		</slide>
+		<slide titulo="Trabalho Futuro (1)" codigo="S018">
+			<corpo>
+				<lista tipo="normal">
+					<item>
+						<bloco-realce tipo="negrito"><texto>XTche:</texto></bloco-realce>
+							<lista tipo="normal">
+								<item>
+									<texto>Construtor de editores de TM baseado em restrições XTche;</texto>
+								</item>
+								<item>
+									<texto>Conversor: XTche  XS4TM</texto>
+								</item>
+								<item>
+									<texto>Tradutor: XTM  AsTMa=  LTM </texto>
+								</item>
+							</lista>
+					</item>
+					<item>
+						<bloco-realce tipo="negrito"><texto>Oveia:</texto></bloco-realce>
+							<lista tipo="normal">
+								<item>
+									<texto>Front-end para XSDS e XS4TM</texto>
+								</item>
+							</lista>
+					</item>
+					<item>
+						<bloco-realce tipo="negrito"><texto>Ulisses:</texto></bloco-realce>
+							<lista tipo="normal">
+								<item>
+									<texto>Desenvolver uma interface gráfica (SVG)</texto>
+								</item>
+								<item>
+									<texto>Desenvolver uma interface adaptativa/dinâmica</texto>
+								</item>
+							</lista>
+					</item>
+				</lista>
+			</corpo>
+		</slide>
+		<slide titulo="Trabalho Futuro (2)" codigo="S019">
+			<corpo>
+				<lista tipo="normal">
+					<item>
+						<bloco-realce tipo="negrito"><texto>Linhas de Investigação:</texto></bloco-realce>
+							<lista tipo="normal">
+								<item>
+									<texto>Aplicar o Metamorphosis em casos de estudo complexos;</texto>
+								</item>
+								<item>
+									<texto>Testar a escalabilidade do Metamorphosis;</texto>
+								</item>
+								<item>
+									<texto>Optimização do processador e do validador de XTche.</texto>
+								</item>
+							</lista>
+					</item>
+				</lista>
+			</corpo>
+		</slide>
+	</corpo>
+</apresentacao>

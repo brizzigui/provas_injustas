@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!ELEMENT pma_xml_export (database)>
+<!ELEMENT database (table)+>
+<!ATTLIST database
+    name CDATA #REQUIRED>
+<!ELEMENT table (column)+>
+<!ATTLIST table
+	name CDATA #REQUIRED>
+<!ELEMENT column (#PCDATA)>
+<!ATTLIST column
+    name CDATA #REQUIRED>

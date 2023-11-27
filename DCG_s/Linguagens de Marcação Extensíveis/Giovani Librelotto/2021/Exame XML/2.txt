@@ -1,0 +1,4 @@
+a) //resultados/turno[2]//total
+b) //candidato[@id = //resultados/turno[1]//votos[text()>200]/@candidato]/text()
+c) Nas cidades que tiveram votos nulos, quantos votos brancos tiveram? <brancos>1000</brancos>
+d) //partido[@id = //candidato[@id="c1"]/apoio/text()]/@nome

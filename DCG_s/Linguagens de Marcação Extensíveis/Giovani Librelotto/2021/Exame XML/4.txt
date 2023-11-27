@@ -1,0 +1,7 @@
+<html>
+	<h3>{//titulo/text()}</h3>
+	<h4>{//autor/text()}</h4>
+    <h4>{//data/text()}</h4>
+    <h3>{//titulo/text()}</h3>
+    {for $e in //corpo/* return $e}
+</html>

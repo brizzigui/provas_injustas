@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="apresentacao">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="abertura" type="opening"/> 
+                <xs:element name="corpo" type="body"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="opening">
+        <xs:sequence>
+            <xs:element name="titulo" type="xs:string"></xs:element>
+            <xs:element name="subtitulo" type="xs:string"></xs:element>
+            <xs:element name="autores" type="auts"/>
+            <xs:element name="instituicao" type="xs:string"></xs:element>
+            <xs:element name="localidade" type="xs:string"></xs:element>
+            <xs:element name="data" type="xs:string"></xs:element>
+            <xs:element name="palavras-chave" type="keywords"></xs:element>
+            <xs:element name="resumo" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="auts">
+        <xs:sequence>
+            <xs:element name="autor" type="aut" minOccurs="1" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="aut">
+        <xs:sequence>
+            <xs:element name="nome" type="xs:string"></xs:element>
+            <xs:element name="email" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="keywords">
+        <xs:sequence>
+            <xs:element name="palavra-chave" type="xs:string" minOccurs="1" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="body">
+        <xs:choice minOccurs="1" maxOccurs="unbounded">
+
+                <xs:element name="lista" type="list"></xs:element>
+                <xs:element name="slide" type="slid"></xs:element>
+                <xs:element name="tabela" type="table"></xs:element>
+                <xs:element name="texto" type="xs:string"></xs:element>
+                <xs:element name="imagem" type="img"></xs:element>
+                <xs:element name="bloco-realce" type="_blocorealce"></xs:element>
+                <xs:element name="br" type="_br"></xs:element>
+        </xs:choice>
+    </xs:complexType>
+    <xs:complexType name="slid">
+        
+        <xs:sequence>
+            
+            <xs:element name="cabecalho" type="head" minOccurs="0" maxOccurs="1"></xs:element>
+            <xs:element name="corpo" type="body"></xs:element>
+            <xs:element name="rodape" type="_rodape" minOccurs="0" maxOccurs="1"></xs:element>
+        </xs:sequence> 
+        <xs:attribute name="titulo" type="xs:string" use="required"/>
+        <xs:attribute name="codigo" type="xs:string" use="required"/>
+        
+    </xs:complexType>    
+    <xs:complexType name="head">
+        <xs:sequence>
+            <xs:element name="titulo" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="_rodape">
+        <xs:sequence>
+            <xs:element name="data" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="list">
+        <xs:sequence>
+            <xs:element name="item" type="_item" minOccurs="0" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="tipo" type="xs:string" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="_item">
+        <xs:choice>
+            <xs:sequence>
+                <xs:element name="bloco-realce" type="_blocorealce" minOccurs="0" maxOccurs="unbounded"></xs:element>
+                <xs:element name="texto" type="xs:string" minOccurs="0" maxOccurs="unbounded"></xs:element>
+                <xs:element name="lista" type="list" minOccurs="0" maxOccurs="unbounded"></xs:element>
+            </xs:sequence>
+        </xs:choice>
+    </xs:complexType>
+    <xs:complexType name="_blocorealce">
+        <xs:choice>
+                <xs:element name="bloco-realce" type="_blocorealce"></xs:element>
+                <xs:element name="texto" type="xs:string"></xs:element> 
+        </xs:choice>
+        <xs:attribute name="tipo" type="xs:string" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="img">
+        <xs:sequence>
+            <xs:element name="figura" type="fig"></xs:element>
+            <xs:element name="legenda" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="fig">
+        <xs:attribute name="uri" type="xs:string" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="_br"/>
+    <xs:complexType name="table">
+        <xs:sequence>
+            <xs:element name="linha" type="line"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="borda" type="xs:string" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="line">
+        <xs:sequence>
+            <xs:element name="celula" type="cell" minOccurs="1" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="cell">
+        <xs:sequence>
+            <xs:element name="lista"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,1 @@
+# Não tem prova e nunca vai ter, para de perder tempo e vai estudar.

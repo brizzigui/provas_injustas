@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!ELEMENT eleicao (tipo,totalEleitores,candidatos,partidos,resultados)>
+<!ELEMENT tipo (#PCDATA)>
+<!ELEMENT totalEleitores (#PCDATA)>
+<!ELEMENT candidatos (candidato+)>
+<!ELEMENT candidato (#PCDATA|apoio)*>
+<!ATTLIST candidato
+    id CDATA #REQUIRED>
+<!ELEMENT apoio (#PCDATA)>
+<!ELEMENT partidos (partido+)>
+<!ELEMENT partido EMPTY>
+<!ATTLIST partido
+    id CDATA #REQUIRED
+    nome CDATA #REQUIRED>
+<!ELEMENT resultados (turno+)>
+<!ELEMENT turno ((data,cidade)|(cidade,data))>
+<!ELEMENT data (#PCDATA)>
+<!ELEMENT cidade (mesa)>
+<!ATTLIST cidade
+    nome CDATA #REQUIRED>
+<!ELEMENT mesa (total,nulos*,brancos,votos+)>
+<!ELEMENT total (#PCDATA)>
+<!ELEMENT nulos (#PCDATA)>
+<!ELEMENT brancos (#PCDATA)>
+<!ELEMENT votos (#PCDATA)>
+<!ATTLIST votos
+    candidato CDATA #REQUIRED>

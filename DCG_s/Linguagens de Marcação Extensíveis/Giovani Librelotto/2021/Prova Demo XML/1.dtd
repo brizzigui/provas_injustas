@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<!ELEMENT apresentacao (abertura,corpo)>
+<!ELEMENT abertura (titulo,subtitulo,autores,instituicao,localidade,data,palavras-chave,resumo)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT subtitulo (#PCDATA)>
+<!ELEMENT autores (autor)+>
+<!ELEMENT autor (nome,email)>
+<!ELEMENT nome (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT instituicao (#PCDATA)>
+<!ELEMENT localidade (#PCDATA)>
+<!ELEMENT data (#PCDATA)>
+<!ELEMENT palavras-chave (palavra-chave)+>
+<!ELEMENT palavra-chave (#PCDATA)>
+<!ELEMENT resumo (#PCDATA)>
+
+<!ELEMENT corpo (slide|lista|tabela|texto|imagem|bloco-realce|br|EMPTY)+>
+<!ELEMENT slide (cabecalho?,corpo,rodape?)>
+<!ATTLIST slide 
+    titulo CDATA #REQUIRED
+    codigo CDATA #REQUIRED>
+<!ELEMENT cabecalho (titulo)>
+
+<!ELEMENT tabela (linha)>
+<!ATTLIST tabela 
+    borda CDATA #REQUIRED>
+
+<!ELEMENT linha (celula)+>
+<!ELEMENT celula (lista)>
+
+<!ELEMENT lista (item)+>
+<!ATTLIST lista 
+    tipo CDATA #REQUIRED>
+<!ELEMENT item (bloco-realce?,texto?,lista?)+>
+<!ELEMENT texto (#PCDATA)>
+<!ELEMENT bloco-realce (bloco-realce|texto)>
+<!ATTLIST bloco-realce 
+    tipo CDATA #REQUIRED>
+<!ELEMENT br EMPTY>
+<!ELEMENT imagem (figura,legenda)>
+<!ELEMENT figura EMPTY>
+<!ATTLIST figura
+    uri CDATA #REQUIRED>
+<!ELEMENT legenda (#PCDATA)>
+<!ELEMENT rodape (data)>

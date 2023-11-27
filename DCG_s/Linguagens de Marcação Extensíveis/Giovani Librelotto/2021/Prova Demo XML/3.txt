@@ -1,0 +1,13 @@
+<q3>
+{for $p in //slide where $p/descendant::imagem return 
+<codigo_3_1>{$p/@codigo}</codigo_3_1>}
+
+<quantidade_3_2>{count(//lista[@tipo="normal"])}</quantidade_3_2>
+
+{for $p in //slide
+where some $o in $p/descendant::lista
+satisfies $o/ancestor::lista
+return 
+<slides_3_3>{$p/@titulo}
+</slides_3_3>}
+</q3>

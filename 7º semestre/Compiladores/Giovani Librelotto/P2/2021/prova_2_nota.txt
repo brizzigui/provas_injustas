@@ -1,0 +1,7 @@
+Questão 1) 4,0
+árvore decorada: certo, mas faltou os atributos no meio e as ações semânticas
+tabelas de símbolos: certo
+
+Questão 2) 4,0
+árvore decorada: certo, mas faltou os atributos no meio e as ações semânticas
+código intermediário: certo
